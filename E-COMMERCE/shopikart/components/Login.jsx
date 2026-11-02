@@ -36,6 +36,21 @@ function Login() {
 
  async function handleLogin(event) {
     event.preventDefault()
+    let isValidated = 1
+
+    if(username == ""){
+
+      isValidated = 0;
+
+    }
+
+    if(isValidated){
+      const result = await axios.post("http://localhost:3000/api/login", { withCredentials: true})
+      console.log(result)
+
+    }else{
+
+    }
 
     setNotice('Your sign-in form is ready to connect to your account.')
   }
